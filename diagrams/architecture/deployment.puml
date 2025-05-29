@@ -1,3 +1,45 @@
-@startuml Deployment
-' C4: Deployment Diagram
+@startuml deployment
+
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Deployment.puml
+
+' Global styles
+LAYOUT_WITH_LEGEND()
+
+' Deployment Nodes
+Deployment_Node(web_server, "Web Server", "Nginx + Docker", "Serves Odoo Admin Dashboard") {
+    Container(odoo, "Odoo", "Python", "Odoo instance for admin interface")
+}
+
+Deployment_Node(api_cluster, "API Cluster", "GKE / Docker", "Hosts backend services") {
+    Container(api_gateway, "API Gateway", "Golang", "Handles routing, auth, throttling")
+    Container(sdmk_service, "SDMK Service", "Golang", "Core logic and data integration")
+    Container(worker, "Background Worker", "Golang", "Processes async jobs from queue")
+}
+
+Deployment_Node(db_server, "PostgreSQL Database", "Cloud SQL / PostgreSQL", "Stores persistent system data") {
+    ContainerDb(postgres, "PostgreSQL", "RDBMS", "Stores structured data for all services")
+}
+
+Deployment_Node(cache_layer, "Caching Layer", "Redis", "Caching for frequent queries") {
+    Container(redis, "Redis", "Key-Value Store", "Used for session, job status, etc.")
+}
+
+Deployment_Node(queue_layer, "Queue Layer", "RabbitMQ", "For background task queueing") {
+    Container(rabbitmq, "RabbitMQ", "Queue", "Message queue between services")
+}
+
+Deployment_Node(storage, "Object Storage", "Google Cloud Storage", "Stores large files") {
+    Container(gcs, "GCS Bucket", "Blob Storage", "Used for document & file uploads")
+}
+
+Rel(odoo, api_gateway, "Connects via REST/JSON")
+Rel(api_gateway, sdmk_service, "Routes requests")
+Rel(sdmk_service, worker, "Dispatches jobs to")
+Rel(sdmk_service, postgres, "Reads/writes to")
+Rel(worker, postgres, "Reads/writes to")
+Rel(sdmk_service, redis, "Reads/writes to")
+Rel(worker, rabbitmq, "Consumes jobs from")
+Rel(odoo, redis, "Reads/writes sessions")
+Rel(worker, gcs, "Uploads files to")
+
 @enduml

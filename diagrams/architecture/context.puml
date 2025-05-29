@@ -1,3 +1,18 @@
-@startuml Context
-' C4: System Context Diagram
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person(admin, "Administrator", "Mengelola sistem dan data SDMK")
+Person(policyMaker, "Pengampu Kebijakan", "Menganalisis dan membuat kebijakan berbasis data")
+System(healthForce, "HealthForce", "Platform Analitik dan Integrasi Data SDMK")
+
+System_Ext(sdmkSource, "Sistem Eksternal SDMK", "Sumber data SDMK dari berbagai lembaga")
+System_Ext(sso, "SSO Platform", "Sistem Single Sign-On untuk otentikasi pengguna")
+
+Rel(admin, healthForce, "Mengelola data, mengakses dashboard")
+Rel(policyMaker, healthForce, "Melihat insight dan laporan SDMK")
+Rel(sdmkSource, healthForce, "Push data SDMK terintegrasi", "HTTPS/REST API")
+Rel(healthForce, sso, "Otentikasi pengguna", "OIDC/SAML")
+
 @enduml
