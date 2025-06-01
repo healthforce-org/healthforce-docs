@@ -1,3 +1,14 @@
-@startuml Component
-' C4: Component Diagram
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+
+Container_Boundary(sdmk, "SDMK Service") {
+    Component(apiHandler, "API Handler", "Golang", "Menerima dan memvalidasi request masuk")
+    Component(coreLogic, "Core Logic", "Golang", "Bisnis proses integrasi dan validasi")
+    Component(dataAccess, "Data Access Layer", "Golang", "Akses ke DB PostgreSQL")
+}
+
+Rel(apiHandler, coreLogic, "Kirim request validasi dan transformasi")
+Rel(coreLogic, dataAccess, "Membaca/menulis data")
 @enduml

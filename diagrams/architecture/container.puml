@@ -1,3 +1,26 @@
-@startuml Container
-' C4: Container Diagram
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+LAYOUT_WITH_LEGEND()
+
+System_Boundary(s1, "HealthForce") {
+    Container(api, "API Gateway", "Golang", "Menangani permintaan eksternal, validasi, routing")
+    Container(serviceCore, "SDMK Service", "Golang", "Proses integrasi, validasi, dan penyimpanan data SDMK")
+    Container(worker, "Data Processor", "Golang + Worker/Queue", "ETL dan kalkulasi analitik")
+    Container(dashboard, "Admin Dashboard", "Odoo 18", "Antarmuka admin untuk mengelola data")
+    ContainerDb(db, "PostgreSQL", "Database", "Menyimpan data SDMK yang terstruktur")
+    Container(queue, "Redis Queue", "Redis", "Antrian pekerjaan ETL dan sinkronisasi data")
+}
+
+Container(sso, "SSO", "OIDC/SAML Provider", "Penyedia autentikasi eksternal")
+
+Rel(admin, dashboard, "Mengakses UI Admin")
+Rel(sdmkSource, api, "Kirim data SDMK via API")
+Rel(api, serviceCore, "Routing ke service internal")
+Rel(serviceCore, db, "Simpan data")
+Rel(serviceCore, queue, "Push ke queue untuk ETL")
+Rel(worker, db, "Tulis hasil ETL dan analitik")
+Rel(admin, sso, "Login melalui", "OIDC")
+Rel(dashboard, sso, "Validasi user", "OIDC")
+
 @enduml
