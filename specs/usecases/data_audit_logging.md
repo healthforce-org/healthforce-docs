@@ -61,6 +61,6 @@ Mencatat seluruh perubahan data penting SDMK (seperti data tenaga kesehatan) unt
 
 ## 🧩 Referensi Terkait
 - [Spesifikasi Backend](../backend.md)
-- [Spesifikasi Odoo](../specs/odoo.md)
-- [Spesifikasi Security](../specs/security.md)
-- [Panduan API](../specs/api-guidelines.md)
+- [Spesifikasi Odoo](../odoo.md)
+- [Spesifikasi Security](../security.md)
+- [Panduan API](../api-guidelines.md)
