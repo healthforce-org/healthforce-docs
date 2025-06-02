@@ -67,7 +67,7 @@ Memungkinkan pengguna internal SDMK (admin, operator, verifikator) melakukan log
   - Durasi login rata-rata
 
 ## 🧩 Referensi Terkait
-- [Modul Odoo terkait autentikasi](../specs/odoo.md)
-- [Integrasi SSO](../specs/integration.md)
-- [Panduan API](../specs/api-guidelines.md)
+- [Modul Odoo terkait autentikasi](../odoo.md)
+- [Integrasi SSO](../integration.md)
+- [Panduan API](../api-guidelines.md)
 - [Diagram konteks SSO](../diagrams/architecture/c4/context-diagram.puml)

@@ -68,8 +68,8 @@ Mengambil dan menyinkronkan data SDMK (Sumber Daya Manusia Kesehatan) dari siste
 - Trace ID digunakan untuk debug lintas sistem.
 
 ## 🧩 Referensi Terkait
-- [Spesifikasi integrasi](../specs/integration.md)
-- [Spesifikasi data pipeline](../specs/data_pipeline.md)
-- [Spesifikasi keamanan](../specs/security.md)
-- [Modul Odoo](../specs/odoo.md)
+- [Spesifikasi integrasi](../integration.md)
+- [Spesifikasi data pipeline](../data_pipeline.md)
+- [Spesifikasi keamanan](../security.md)
+- [Modul Odoo](../odoo.md)
 - [Diagram konteks SISDMK](../diagrams/architecture/c4/context-diagram.puml)

@@ -1,0 +1,32 @@
+@startuml role_assignment_sequence
+
+title 👥 Sequence: Penugasan Peran Pengguna Internal SDMK
+
+actor Admin
+participant "Odoo Admin Dashboard" as OdooDashboard
+participant "User Management Module" as UserMgmt
+participant "Backend API" as BackendAPI
+participant "Database" as DB
+participant "Notification Service" as Notification
+
+== Proses Penugasan Role Baru ==
+Admin -> OdooDashboard : Buka halaman user management
+OdooDashboard -> UserMgmt : Request daftar pengguna
+UserMgmt -> DB : Ambil data pengguna
+DB --> UserMgmt : Kirim daftar pengguna
+UserMgmt --> OdooDashboard : Tampilkan daftar pengguna
+
+Admin -> OdooDashboard : Pilih user, pilih role baru
+OdooDashboard -> UserMgmt : Kirim update role
+UserMgmt -> DB : Update role user
+DB --> UserMgmt : Konfirmasi update sukses
+
+UserMgmt -> BackendAPI : Sinkronisasi role ke backend
+BackendAPI --> UserMgmt : Konfirmasi sinkronisasi
+
+UserMgmt -> Notification : Kirim notifikasi perubahan role ke user
+Notification --> UserMgmt : Konfirmasi pengiriman notifikasi
+
+UserMgmt --> OdooDashboard : Tampilkan pesan sukses
+
+@enduml
