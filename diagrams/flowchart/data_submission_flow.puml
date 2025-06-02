@@ -1,0 +1,33 @@
+@startuml data_submission_flow
+
+title 📤 Data Submission Flow - HealthForce SDMK Integration
+
+start
+
+:Eksternal System (KKI/SISDMK) mengirim request ke API Gateway;
+
+:API Gateway validasi Header (Authorization, Trace ID, Content-Type);
+
+if (Token valid?) then (Ya)
+  :Forward request ke backend `submission-service`;
+  :Validasi payload JSON (format, field wajib, struktur);
+
+  if (Valid?) then (Ya)
+    :Cek mapping data → transform ke format internal;
+    :Kirim data ke database (PostgreSQL);
+    :Trigger audit log + simpan trace ID;
+    :Kirim notifikasi success (Opsional via webhook/kafka);
+    stop
+  else (Tidak)
+    :Kembalikan HTTP 422 Unprocessable Entity;
+    :Log error dan trace ID ke Datadog;
+    stop
+  endif
+
+else (Tidak)
+  :Kembalikan HTTP 401 Unauthorized;
+  :Log attempt tidak valid;
+  stop
+endif
+
+@enduml

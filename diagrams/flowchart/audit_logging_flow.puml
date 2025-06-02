@@ -1,0 +1,36 @@
+@startuml audit_logging_flow
+
+title 📝 Audit Logging Flow - HealthForce
+
+start
+
+:User/API melakukan aksi (misal: login, submit data, update profil);
+
+:Service terkait (Auth / Data / Integration) menerima request;
+
+:Generate Trace ID (jika belum ada);
+
+:Validasi dan proses data;
+
+if (Aksi berhasil?) then (Ya)
+  :Kumpulkan metadata aksi;
+  note right
+    - user_id
+    - action_type (create/update/delete)
+    - entity (user, sdmk, dll)
+    - timestamp
+    - IP address / user agent
+    - trace_id
+  end note
+
+  :Tulis ke tabel `audit_logs`;
+
+  :Kirim log ke Datadog dengan Trace ID;
+else (Tidak)
+  :Log error + trace_id ke Datadog;
+  :Tulis error ke tabel `audit_logs` (optional);
+endif
+
+stop
+
+@enduml

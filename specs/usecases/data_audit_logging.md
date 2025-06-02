@@ -60,7 +60,7 @@ Mencatat seluruh perubahan data penting SDMK (seperti data tenaga kesehatan) unt
 - Statistik jumlah perubahan data per hari ditampilkan di dashboard.
 
 ## 🧩 Referensi Terkait
-- [Spesifikasi Backend](../specs/backend.md)
-- [Spesifikasi Odoo](../specs/odoo.md)
-- [Spesifikasi Security](../specs/security.md)
-- [Panduan API](../specs/api-guidelines.md)
+- [Spesifikasi Backend](../backend.md)
+- [Spesifikasi Odoo](../odoo.md)
+- [Spesifikasi Security](../security.md)
+- [Panduan API](../api-guidelines.md)

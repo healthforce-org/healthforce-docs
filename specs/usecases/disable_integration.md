@@ -58,8 +58,8 @@ Memberikan kemampuan kepada admin untuk menonaktifkan sementara integrasi dengan
 - Semua proses sinkronisasi mencatat status "skipped" saat integrasi nonaktif.
 
 ## 🧩 Referensi Terkait
-- [Spesifikasi Odoo](../specs/odoo.md)
-- [Spesifikasi integrasi](../specs/integration.md)
-- [Spesifikasi keamanan](../specs/security.md)
-- [Panduan API](../specs/api-guidelines.md)
+- [Spesifikasi Odoo](../odoo.md)
+- [Spesifikasi integrasi](../integration.md)
+- [Spesifikasi keamanan](../security.md)
+- [Panduan API](../api-guidelines.md)
 - [Diagram konteks integrasi](../diagrams/architecture/c4/context-diagram.puml)
