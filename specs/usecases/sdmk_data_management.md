@@ -66,7 +66,7 @@ Menyediakan fitur pengelolaan data SDMK (Sumber Daya Manusia Kesehatan) melalui 
   - Durasi rata-rata pengambilan dan penyimpanan data
 
 ## 🧩 Referensi Terkait
-- [Modul Odoo terkait SDMK](../specs/odoo.md)
-- [Integrasi KKI & SISDMK](../specs/integration.md)
-- [Panduan API](../specs/api-guidelines.md)
+- [Modul Odoo terkait SDMK](../odoo.md)
+- [Integrasi KKI & SISDMK](../integration.md)
+- [Panduan API](../api-guidelines.md)
 - [Diagram konteks SDMK](../diagrams/architecture/c4/container-diagram.puml)

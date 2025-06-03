@@ -46,5 +46,5 @@ Memungkinkan pengguna (tenaga kesehatan) melakukan pendaftaran mandiri untuk mem
 - Waktu proses validasi admin.
 
 ## 🧩 Referensi Terkait
-- [Integrasi SISDMK dan KKI](../specs/integration.md)
-- [Modul Odoo sdmk_core](../specs/odoo.md)
+- [Integrasi SISDMK dan KKI](../integration.md)
+- [Modul Odoo sdmk_core](../odoo.md)
