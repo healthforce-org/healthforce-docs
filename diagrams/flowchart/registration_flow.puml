@@ -1,24 +1,3 @@
-@startuml registration_flow
-title Alur Registrasi Pengguna SDMK
-
-start
-
-:User membuka halaman registrasi;
-:User mengisi data registrasi;
-if (Data valid?) then (yes)
-  :Sistem validasi data;
-  if (User sudah terdaftar?) then (yes)
-    :Tampilkan pesan "User sudah terdaftar";
-    stop
-  else (no)
-    :Simpan data user ke database;
-    :Kirim email konfirmasi (optional);
-    :Aktifkan akun user;
-    stop
-  endif
-else (no)
-  :Tampilkan pesan error validasi;
-  stop
-endif
-
+@startuml
+' Flowchart: Registration Flow
 @enduml

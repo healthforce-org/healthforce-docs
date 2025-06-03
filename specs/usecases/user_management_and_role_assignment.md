@@ -55,6 +55,6 @@ Memungkinkan admin sistem HealthForce untuk mengelola profil pengguna internal S
 - Alert untuk percobaan akses tidak sah.  
 
 ## 🧩 Referensi Terkait  
-- [Modul Odoo user management](../odoo.md)  
-- [Panduan API user management](../api-guidelines.md)  
+- [Modul Odoo user management](../specs/odoo.md)  
+- [Panduan API user management](../specs/api-guidelines.md)  
 - [Audit logging use case](./data_audit_logging.md)  

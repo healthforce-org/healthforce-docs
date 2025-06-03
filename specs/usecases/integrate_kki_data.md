@@ -66,8 +66,8 @@ Mengambil dan menyinkronkan data tenaga kesehatan dari sistem KKI (Konsil Kedokt
 - Alert jika data gagal melebihi threshold 20% dalam 1 batch.
 
 ## 🧩 Referensi Terkait
-- [Integrasi eksternal](../integration.md)
-- [Modul Odoo terkait SDMK](../odoo.md)
-- [Panduan pipeline](../data_pipeline.md)
-- [Panduan keamanan](../security.md)
+- [Integrasi eksternal](../specs/integration.md)
+- [Modul Odoo terkait SDMK](../specs/odoo.md)
+- [Panduan pipeline](../specs/data_pipeline.md)
+- [Panduan keamanan](../specs/security.md)
 - [Diagram konteks integrasi KKI](../diagrams/architecture/c4/context-diagram.puml)

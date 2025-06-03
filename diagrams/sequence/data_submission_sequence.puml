@@ -1,36 +1,3 @@
-@startuml data_submission_sequence
-
-title 🔄 Sequence: Data Submission from External Systems to HealthForce
-
-actor ExternalSystem
-participant "API Gateway (Golang)" as APIGateway
-participant "Service Handler" as ServiceHandler
-participant "Odoo Backend" as Odoo
-participant "Database" as DB
-participant "Monitoring System" as Monitoring
-
-== Data Pengiriman ==
-ExternalSystem -> APIGateway : POST /api/v1/data\n(header: trace-id, auth token)
-APIGateway -> ServiceHandler : Validasi request & otentikasi
-ServiceHandler -> Odoo : Kirim data ke modul terkait
-Odoo -> DB : Simpan data record baru
-DB --> Odoo : Konfirmasi simpan
-Odoo --> ServiceHandler : Response sukses
-
-== Logging & Monitoring ==
-ServiceHandler -> APIGateway : Response 200 OK
-APIGateway -> ExternalSystem : Response sukses
-APIGateway -> Monitoring : Emit metric & trace log
-
-== Exception Handling ==
-alt Data tidak valid
-    ServiceHandler -> APIGateway : Response 400 Bad Request
-    APIGateway -> ExternalSystem : Error response
-    APIGateway -> Monitoring : Emit error metric
-else Authentication gagal
-    ServiceHandler -> APIGateway : Response 401 Unauthorized
-    APIGateway -> ExternalSystem : Error response
-    APIGateway -> Monitoring : Emit error metric
-end
-
+@startuml
+' Sequence: Data Submission
 @enduml

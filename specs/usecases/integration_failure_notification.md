@@ -43,6 +43,6 @@ Memastikan admin atau tim teknis mendapatkan notifikasi cepat jika terjadi kegag
 - Durasi downtime integrasi.
 
 ## 🧩 Referensi Terkait
-- [Modul sdmk_integration_manager](../odoo.md)
-- [Monitoring dan Observabilitas](../odoo.md)
-- [API Guidelines](../api-guidelines.md)
+- [Modul sdmk_integration_manager](../specs/odoo.md)
+- [Monitoring dan Observabilitas](../specs/odoo.md)
+- [API Guidelines](../specs/api-guidelines.md)
