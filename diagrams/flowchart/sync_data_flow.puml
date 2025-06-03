@@ -1,27 +1,3 @@
-@startuml sync_data_flow
-title Alur Sinkronisasi Data dari Sistem Eksternal
-
-start
-
-:Scheduler/job trigger sinkronisasi;
-:Kirim request API ke sistem eksternal;
-if (Response OK?) then (yes)
-  :Terima data response;
-  :Validasi data yang diterima;
-  if (Data valid?) then (yes)
-    :Transform data ke format internal;
-    :Simpan/update data di database HealthForce;
-    :Kirim log sukses ke monitoring;
-    stop
-  else (no)
-    :Catat error validasi data;
-    :Kirim notifikasi error ke admin;
-    stop
-  endif
-else (no)
-  :Catat error response dari sistem eksternal;
-  :Kirim notifikasi error ke admin;
-  stop
-endif
-
+@startuml
+' Flowchart: Sync Data Flow
 @enduml
