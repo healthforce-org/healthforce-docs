@@ -51,7 +51,7 @@ Memungkinkan admin sistem HealthForce untuk mengelola profil pengguna internal S
 - Semua perubahan dicatat di audit trail dengan user pembuat, waktu, dan perubahan data.  
 
 ## 📈 Monitoring & Observabilitas  
-- Aktivitas manajemen user dicatat dan dipantau lewat Datadog/Grafana.  
+- Aktivitas manajemen user dicatat dan dipantau lewat Prometheus/Grafana.  
 - Alert untuk percobaan akses tidak sah.  
 
 ## 🧩 Referensi Terkait  
