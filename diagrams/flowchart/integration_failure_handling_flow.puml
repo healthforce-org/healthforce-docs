@@ -1,0 +1,32 @@
+@startuml integration_failure_handling_flow
+
+title ⚠️ Integration Failure Handling Flow - HealthForce
+
+start
+
+:Eksternal system kirim request ke API Gateway;
+
+:API Gateway validasi token dan payload;
+
+if (Request gagal dikirim ke backend?) then (Ya)
+  :Log error level WARN di API Gateway;
+  :Kirim notifikasi ke Prometheus/Grafana (event + trace ID);
+  :Kembalikan HTTP 503 Service Unavailable;
+  stop
+else (Tidak)
+  :Backend (`integration-service`) proses request;
+
+  if (Validasi data gagal?) then (Ya)
+    :Kembalikan HTTP 422;
+    :Log error dan payload ke Prometheus/Grafana;
+    :Tulis ke tabel `integration_failures`;
+    :Trigger notifikasi ke admin via Slack/Webhook;
+    stop
+  else (Tidak)
+    :Proses simpan data;
+    :Log sukses dan simpan audit trail;
+    stop
+  endif
+endif
+
+@enduml
