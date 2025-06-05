@@ -55,7 +55,7 @@ Mencatat seluruh perubahan data penting SDMK (seperti data tenaga kesehatan) unt
 - Semua akses ke audit log dicatat juga dalam sistem logging.
 
 ## 📈 Monitoring & Observabilitas
-- Monitoring health sistem audit logging di Datadog.
+- Monitoring health sistem audit logging di Prometheus/Grafana.
 - Alert jika terjadi kegagalan penyimpanan audit log lebih dari 5 menit.
 - Statistik jumlah perubahan data per hari ditampilkan di dashboard.
 

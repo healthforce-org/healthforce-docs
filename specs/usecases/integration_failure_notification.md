@@ -4,13 +4,13 @@
 UC-INTEGRATION-FAIL-001
 
 ## 🎯 Tujuan
-Memastikan admin atau tim teknis mendapatkan notifikasi cepat jika terjadi kegagalan dalam integrasi dengan sistem eksternal (KKI, SISDMK, SSO).
+Memastikan admin atau tim teknis mendapatkan notifikasi cepat jika terjadi kegagalan dalam integrasi dengan sistem eksternal (RegNakes, HubSDMK, SSO).
 
 ## 👥 Aktor Terkait
 - Admin Sistem
 - Backend Golang (API Gateway)
 - Modul Odoo `sdmk_integration_manager`
-- Sistem monitoring (Datadog, Prometheus, Grafana)
+- Sistem monitoring (Prometheus, Grafana)
 
 ## 🗂️ Modul Terkait
 - Backend Service: `integration-service`

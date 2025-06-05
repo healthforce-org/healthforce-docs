@@ -15,12 +15,12 @@ Menyediakan fitur pengelolaan data SDMK (Sumber Daya Manusia Kesehatan) melalui 
 
 ## 🗂️ Modul Terkait
 - Backend Service: `sdmk-service`
-- Odoo Module: `sdmk_core`, `sdmk_integration_kki`, `sdmk_integration_sisdmk`, `sdmk_integration_manager`,
+- Odoo Module: `sdmk_core`, `sdmk_integration_regnakes`, `sdmk_integration_hubsdmk`, `sdmk_integration_manager`,
 `sdmk_admin`
 
 ## 📚 Preconditions
 - Pengguna telah login melalui SSO dan memiliki peran yang sesuai.
-- Database SDMK telah terisi minimal sebagian dari integrasi KKI atau SISDMK.
+- Database SDMK telah terisi minimal sebagian dari integrasi RegNakes atau HubSDMK.
 - Hak akses pengguna sesuai dengan wilayah kerja atau level administratifnya.
 
 ## 🔁 Alur Normal (Main Flow)
@@ -47,7 +47,7 @@ Menyediakan fitur pengelolaan data SDMK (Sumber Daya Manusia Kesehatan) melalui 
 - ID perubahan/log dilacak melalui `trace_id`.
 
 ## 🧪 Validasi & Logika
-- STR harus valid dan masih berlaku (jika data berasal dari KKI).
+- STR harus valid dan masih berlaku (jika data berasal dari RegNakes).
 - Fasilitas kesehatan harus terdaftar resmi.
 - Status kepegawaian tidak boleh kosong.
 - Validasi dilakukan di level frontend dan backend.
@@ -67,6 +67,6 @@ Menyediakan fitur pengelolaan data SDMK (Sumber Daya Manusia Kesehatan) melalui 
 
 ## 🧩 Referensi Terkait
 - [Modul Odoo terkait SDMK](../odoo.md)
-- [Integrasi KKI & SISDMK](../integration.md)
+- [Integrasi RegNakes & HubSDMK](../integration.md)
 - [Panduan API](../api-guidelines.md)
 - [Diagram konteks SDMK](../diagrams/architecture/c4/container-diagram.puml)

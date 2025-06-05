@@ -1,0 +1,36 @@
+@startuml disable_integration_flow
+
+title 🔌 Disable Integration Flow - HealthForce
+
+start
+
+:Admin login ke dashboard Odoo;
+
+:Admin membuka halaman "Manajemen Integrasi";
+
+:Admin memilih sistem eksternal (RegNakes / HubSDMK);
+
+:Klik tombol "Nonaktifkan Integrasi";
+
+:Konfirmasi nonaktifkan → Ya;
+
+:Frontend kirim request ke Backend API;
+
+:Backend verifikasi hak akses admin;
+
+if (Authorized?) then (Ya)
+  :Perbarui status integrasi di DB (status = "disabled");
+
+  :Tulis log audit → "Integration Disabled";
+
+  :Kirim notifikasi ke channel monitoring (Slack / email);
+
+  :Tampilkan notifikasi sukses ke admin;
+else (Tidak)
+  :Tampilkan pesan error: "Akses ditolak";
+  :Tulis log audit → "Attempt to disable without permission";
+endif
+
+stop
+
+@enduml

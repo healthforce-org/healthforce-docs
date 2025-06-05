@@ -34,7 +34,7 @@ Memungkinkan pengguna internal SDMK (admin, operator, verifikator) melakukan log
 ## 🔄 Alur Alternatif (Exception Flow)
 - **Kondisi**: `code` tidak valid / expired
   - Backend mengembalikan error "SSO expired"
-  - Log error dikirim ke Datadog
+  - Log error dikirim ke Prometheus/Grafana
 - **Kondisi**: Pengguna tidak terdaftar di sistem internal HealthForce
   - Backend menolak login meskipun token SSO valid
   - Tampilkan pesan: "Akun Anda belum didaftarkan dalam sistem HealthForce"
