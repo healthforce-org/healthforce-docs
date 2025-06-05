@@ -4,16 +4,16 @@
 UC-INT-MGMT-005
 
 ## 🎯 Tujuan
-Memberikan kemampuan kepada admin untuk menonaktifkan sementara integrasi dengan sistem eksternal (seperti KKI atau SISDMK) saat terjadi kendala operasional, pemeliharaan, atau sistem eksternal tidak tersedia.
+Memberikan kemampuan kepada admin untuk menonaktifkan sementara integrasi dengan sistem eksternal (seperti RegNakes atau HubSDMK) saat terjadi kendala operasional, pemeliharaan, atau sistem eksternal tidak tersedia.
 
 ## 👥 Aktor Terkait
 - Admin SDMK (pengelola integrasi)
 - Backend HealthForce
 - Modul Odoo Admin Dashboard
-- Sistem eksternal (KKI, SISDMK, dll)
+- Sistem eksternal (RegNakes, HubSDMK, dll)
 
 ## 🗂️ Modul Terkait
-- Backend Service: `integration-manager-service`, service integrasi terkait (`etl-kki-service`, `etl-sisdmk-service`)
+- Backend Service: `integration-manager-service`, service integrasi terkait (`etl-regnakes-service`, `etl-hubsdmk-service`)
 - Odoo Module: `sdmk_integration_manager`
 
 ## 📚 Preconditions
@@ -23,7 +23,7 @@ Memberikan kemampuan kepada admin untuk menonaktifkan sementara integrasi dengan
 
 ## 🔁 Alur Normal (Main Flow)
 1. Admin membuka halaman "Pengaturan Integrasi" di Odoo.
-2. Admin memilih sistem eksternal yang ingin dinonaktifkan (misalnya KKI).
+2. Admin memilih sistem eksternal yang ingin dinonaktifkan (misalnya RegNakes).
 3. Admin menekan tombol "Nonaktifkan".
 4. Backend menyimpan status integrasi menjadi `inactive` di database internal.
 5. Semua service integrasi terkait akan membaca status ini sebelum melakukan proses sinkronisasi.

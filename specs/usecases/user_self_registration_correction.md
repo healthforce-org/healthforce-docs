@@ -4,7 +4,7 @@
 UC-SELFREG-001
 
 ## 🎯 Tujuan
-Memungkinkan pengguna (tenaga kesehatan) melakukan pendaftaran mandiri untuk memperbaiki atau melengkapi data mereka yang berasal dari sistem eksternal seperti KKI atau SISDMK.
+Memungkinkan pengguna (tenaga kesehatan) melakukan pendaftaran mandiri untuk memperbaiki atau melengkapi data mereka yang berasal dari sistem eksternal seperti RegNakes atau HubSDMK.
 
 ## 👥 Aktor Terkait
 - Tenaga kesehatan (user eksternal)
@@ -21,7 +21,7 @@ Memungkinkan pengguna (tenaga kesehatan) melakukan pendaftaran mandiri untuk mem
 
 ## 🔁 Alur Normal (Main Flow)
 1. Pengguna mengakses halaman pendaftaran self-registration.
-2. Mengisi formulir dengan data yang diperlukan (misal NIK, nomor registrasi KKI).
+2. Mengisi formulir dengan data yang diperlukan (misal NIK, nomor registrasi RegNakes).
 3. Sistem memverifikasi data awal dengan data eksternal.
 4. Pengguna mengirimkan permintaan koreksi atau update data.
 5. Backend menyimpan permintaan dan menunggu validasi admin.
@@ -46,5 +46,5 @@ Memungkinkan pengguna (tenaga kesehatan) melakukan pendaftaran mandiri untuk mem
 - Waktu proses validasi admin.
 
 ## 🧩 Referensi Terkait
-- [Integrasi SISDMK dan KKI](../integration.md)
+- [Integrasi HubSDMK dan RegNakes](../integration.md)
 - [Modul Odoo sdmk_core](../odoo.md)
