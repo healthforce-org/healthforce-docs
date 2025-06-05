@@ -1,6 +1,6 @@
 # Integrasi Sistem Eksternal di HealthForce
 
-Dokumen ini menjelaskan desain dan mekanisme integrasi antara sistem HealthForce dengan sistem eksternal utama, yaitu Konsil Kesehatan Indonesia (KKI), Sistem Informasi Sumber Daya Manusia Kesehatan (SISDMK), dan Single Sign-On (SSO).
+Dokumen ini menjelaskan desain dan mekanisme integrasi antara sistem HealthForce dengan sistem eksternal utama (FIKTIF), yaitu Registrasi Nakes (RegNakes), Hub Sumber Daya Manusia Kesehatan (HubSDMK), dan Single Sign-On (SSO).
 
 ---
 
@@ -12,9 +12,9 @@ HealthForce mengimplementasikan integrasi yang aman, handal, dan scalable untuk 
 
 ## 2. Sistem Eksternal
 
-### 2.1 Konsil Kesehatan Indonesia (KKI)
+### 2.1 Registrasi Nakes (RegNakes) [FIKTIF]
 - **Tujuan Integrasi:**  
-  Mendapatkan data validasi dan sertifikasi tenaga kesehatan yang telah diverifikasi oleh KKI.
+  Mendapatkan data validasi dan sertifikasi tenaga kesehatan yang telah diverifikasi oleh RegNakes.
 - **Metode Komunikasi:**  
   REST API dengan autentikasi token API.
 - **Data yang Diakses:**  
@@ -22,9 +22,9 @@ HealthForce mengimplementasikan integrasi yang aman, handal, dan scalable untuk 
 - **Frekuensi Sinkronisasi:**  
   Batch harian dan realtime (webhook) untuk event penting.
 - **Penanganan Error:**  
-  Retry dengan exponential backoff, fallback ke data cache lokal jika API KKI down.
+  Retry dengan exponential backoff, fallback ke data cache lokal jika API RegNakes down.
 
-### 2.2 Sistem Informasi Sumber Daya Manusia Kesehatan (SISDMK)
+### 2.2 Hub Sumber Daya Manusia Kesehatan (HubSDMK)
 - **Tujuan Integrasi:**  
   Sinkronisasi data administrasi dan profil tenaga kesehatan di seluruh fasilitas kesehatan.
 - **Metode Komunikasi:**  
@@ -92,7 +92,7 @@ HealthForce mengimplementasikan integrasi yang aman, handal, dan scalable untuk 
 
 ## 7. Roadmap Pengembangan
 
-- Fase 1: Integrasi dasar REST API untuk KKI dan SISDMK.
+- Fase 1: Integrasi dasar REST API untuk RegNakes dan HubSDMK.
 - Fase 2: Implementasi webhook dan event-driven sync.
 - Fase 3: Integrasi SSO dengan OAuth 2.0.
 - Fase 4: Penguatan mekanisme monitoring, tracing, dan fallback.

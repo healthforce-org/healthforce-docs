@@ -16,7 +16,7 @@ Dokumen ini menjelaskan arsitektur dan mekanisme pipeline data yang digunakan un
 ## 2. Arsitektur Pipeline
 
 - **Data Sources:**  
-  Sistem eksternal seperti KKI, SISDMK, SSO, dan internal services.
+  Sistem eksternal seperti RegNakes, HubSDMK, SSO, dan internal services.
 - **Ingestion Layer:**  
   Komponen yang menerima data mentah via API, webhook, atau batch upload.
 - **Processing Layer:**  
@@ -57,7 +57,7 @@ Dokumen ini menjelaskan arsitektur dan mekanisme pipeline data yang digunakan un
 
 ### 3.5 Monitoring & Alerting
 
-- Integrasi dengan Datadog untuk monitoring pipeline health dan performa.
+- Integrasi dengan Prometheus/Grafana untuk monitoring pipeline health dan performa.
 - Alert otomatis pada kegagalan ingestion atau processing.
 - Logging lengkap untuk audit trail dan troubleshooting.
 

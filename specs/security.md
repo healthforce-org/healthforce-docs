@@ -59,7 +59,7 @@ Dokumen ini menjelaskan kebijakan, standar, dan implementasi keamanan yang diter
 
 ## 7. Penanganan Insiden Keamanan
 
-- Prosedur deteksi dan respon insiden melalui monitoring Datadog dan alert system.
+- Prosedur deteksi dan respon insiden melalui monitoring Prometheus/Grafana dan alert system.
 - Tim respons keamanan internal siap menangani dan menganalisis insiden.
 - Dokumentasi dan pelaporan insiden sesuai regulasi yang berlaku.
 

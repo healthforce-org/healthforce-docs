@@ -37,8 +37,8 @@ sdmk_core/
 Untuk menjaga skalabilitas dan fleksibilitas, modul Odoo dibagi menjadi beberapa bagian:
 
 - `sdmk_core`: Modul utama yang menyimpan struktur data inti SDMK.
-- `sdmk_integration_kki`: Untuk integrasi data tenaga kesehatan dari KKI.
-- `sdmk_integration_sisdmk`: Untuk integrasi data dari SISDMK.
+- `sdmk_integration_regnakes`: Untuk integrasi data tenaga kesehatan dari RegNakes.
+- `sdmk_integration_hubsdmk`: Untuk integrasi data dari HubSDMK.
 - `sdmk_integration_manager`: Untuk kontrol status integrasi sistem eksternal (enable/disable per service).
 - `sdmk_admin`: Modul fitur admin non-SDMK seperti pengguna internal, logs, audit, dll.
 
@@ -46,7 +46,7 @@ Untuk menjaga skalabilitas dan fleksibilitas, modul Odoo dibagi menjadi beberapa
 
 ## 🔄 Alur Integrasi dengan Backend Golang
 
-1. Backend menerima data dari sistem eksternal (KKI/SISDMK).
+1. Backend menerima data dari sistem eksternal (RegNakes/HubSDMK).
 2. Backend mengirim data ke Odoo via REST API endpoint khusus.
 3. Odoo melakukan validasi, pencatatan, dan update record.
 4. Odoo memberi response (berhasil/gagal) ke backend.
