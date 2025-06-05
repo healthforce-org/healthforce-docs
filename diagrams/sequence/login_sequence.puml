@@ -1,3 +1,42 @@
-@startuml
-' Sequence: Login Flow
+@startuml login_sequence
+
+title 🧬 Sequence: Login via SSO (HealthForce Internal)
+
+actor Pengguna
+participant "Frontend (Admin Dashboard)" as Frontend
+participant "API Gateway (Golang)" as APIGateway
+participant "SSO Server" as SSO
+participant "Odoo Backend" as Odoo
+
+== Inisiasi Login ==
+Pengguna -> Frontend : Akses halaman admin
+Frontend -> APIGateway : Cek sesi aktif
+APIGateway -> Frontend : 401 Unauthorized
+Frontend -> Pengguna : Redirect ke halaman login SSO
+
+== Autentikasi di SSO ==
+Pengguna -> SSO : Submit username & password
+SSO -> Pengguna : Redirect kembali (callback) dengan code
+Pengguna -> Frontend : Redirect callback URL
+
+== Pertukaran Token ==
+Frontend -> APIGateway : Kirim code (via callback)
+APIGateway -> SSO : Exchange code → access_token
+SSO --> APIGateway : access_token + user profile
+
+== Verifikasi & Akses ==
+APIGateway -> Odoo : Cek user di DB internal
+alt User valid
+    Odoo --> APIGateway : OK + role info
+    APIGateway -> Frontend : Set session + Redirect ke dashboard
+    Frontend -> Pengguna : Tampilkan dashboard
+else User tidak terdaftar
+    Odoo --> APIGateway : Not Found
+    APIGateway -> Frontend : Tampilkan error "Belum terdaftar"
+end
+
+== Logging & Trace ==
+APIGateway -> Odoo : Simpan log login (trace ID, IP)
+APIGateway -> Monitoring : Emit trace (Prometheus, Grafana)
+
 @enduml
