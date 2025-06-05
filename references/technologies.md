@@ -11,7 +11,7 @@ Berikut adalah daftar teknologi yang digunakan dalam pengembangan dan operasiona
 - **Google Cloud Platform (GCP)** — Infrastruktur cloud utama (Compute Engine, Cloud SQL, IAM, dll).
 - **Docker** — Containerisasi semua komponen layanan.
 - **Kubernetes (GKE)** — Orkestrasi layanan dalam skala besar di GCP.
-- **Datadog** — Monitoring dan observabilitas sistem.
+- **Prometheus/Grafana** — Monitoring dan observabilitas sistem.
 
 ## 📊 Admin Dashboard
 - **Odoo 18.0 Community Edition** — Digunakan untuk modul admin dashboard.
@@ -22,12 +22,12 @@ Berikut adalah daftar teknologi yang digunakan dalam pengembangan dan operasiona
 - **Custom SSO** — Integrasi otentikasi antar sistem internal SDMK.
 - **JWT** — JSON Web Token untuk otorisasi API.
 - **TLS/SSL** — Enkripsi trafik data.
-- **Custome Enkripsi** - Custome Enkripsi saat pertukaran data sustem eksternal
+- **Custome Enkripsi** - Custome Enkripsi saat pertukaran data sistem eksternal
 
 
 ## 🔄 Integrasi Sistem Eksternal
-- **Sistem Informasi Sumber Daya Manusia Kesehatan (SISDMK)** — Konsumsi dan sinkronisasi data tenaga kesehatan.
-- **Konsil Kesehatan Indonesia (KKI)** — Sistem lain yang terhubung via API.
+- **Hub Sumber Daya Manusia Kesehatan (HubSDMK)** — Konsumsi dan sinkronisasi data FIKTIF tenaga kesehatan.
+- **Registrasi Nakes(RegNakes)** — Sistem FIKTIF lain yang terhubung via API.
 - **Webhook** — Mekanisme komunikasi event-driven.
 
 ## 🛠️ DevOps & Tooling

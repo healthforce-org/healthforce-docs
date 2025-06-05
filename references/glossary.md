@@ -4,6 +4,9 @@ Dokumen ini mencatat istilah dan singkatan yang sering digunakan dalam project H
 
 | Istilah / Singkatan | Penjelasan                                                                 |
 |---------------------|----------------------------------------------------------------------------|
+| Nakes               | Tenaga Kesehatan.                                                         |
+| RekNakes            | Sistem FIKTIF Registrasi Tenaga Kesehatan.                                |
+| HubSDMK             | Sistem FIKTIF Sumber Daya Manusia Kesehatan.                              |
 | SDMK                | Sumber Daya Manusia Kesehatan (Dokter, Perawat, Nakes, dll).              |
 | SSO                 | Single Sign-On, mekanisme autentikasi lintas sistem.                      |
 | HealthForce         | Nama sistem infrastruktur SDMK yang sedang dibangun.                      |
